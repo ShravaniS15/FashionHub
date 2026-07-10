@@ -1,24 +1,28 @@
 from sqlalchemy.orm import Session
 from models import User
-from passlib.context import CryptContext
-
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
+import bcrypt
 
 # ==========================
 # PASSWORD HELPERS
 # ==========================
+
 def hash_password(password: str):
-    return pwd_context.hash(password)
+    return bcrypt.hashpw(
+        password.encode("utf-8"),
+        bcrypt.gensalt()
+    ).decode("utf-8")
 
 
 def verify_password(plain: str, hashed: str):
-    return pwd_context.verify(plain, hashed)
-
+    return bcrypt.checkpw(
+        plain.encode("utf-8"),
+        hashed.encode("utf-8")
+    )
 
 # ==========================
 # USER LOOKUP
 # ==========================
+
 def get_user_by_email(db: Session, email: str):
     return db.query(User).filter(User.email == email).first()
 
@@ -26,10 +30,10 @@ def get_user_by_email(db: Session, email: str):
 def get_user_by_id(db: Session, user_id: int):
     return db.query(User).filter(User.id == user_id).first()
 
-
 # ==========================
 # REGISTER
 # ==========================
+
 def register_user(db: Session, fullname, email, password, phone="", address=""):
 
     email = email.lower().strip()
@@ -54,6 +58,7 @@ def register_user(db: Session, fullname, email, password, phone="", address=""):
 # ==========================
 # LOGIN
 # ==========================
+
 def login_user(db: Session, email, password):
 
     email = email.lower().strip()
