@@ -169,8 +169,6 @@ st.markdown(
 """
 <center>
 
-Made with ❤️ using Streamlit
-
 © 2026 FashionHub Store
 
 </center>

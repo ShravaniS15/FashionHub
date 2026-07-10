@@ -45,7 +45,7 @@ if login:
 
         st.success(f"Welcome {user.fullname} 🎉")
         st.write(st.session_state)
-        st.switch_page("pages/Home.py")
+        st.switch_page("pages/home.py")
 
     else:
         st.error(message)
