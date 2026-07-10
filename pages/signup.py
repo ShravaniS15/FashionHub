@@ -70,7 +70,7 @@ if submit:
             st.session_state.user_name = user.fullname
             st.session_state.user_email = user.email
 
-            st.switch_page("pages/Home.py")
+            st.switch_page("pages/home.py")
 
         else:
 
