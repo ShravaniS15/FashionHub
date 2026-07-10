@@ -68,37 +68,37 @@ col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     if st.button("👔 Men", use_container_width=True):
-        st.switch_page("pages/Men.py")
+        st.switch_page("pages/men.py")
 
 with col2:
     if st.button("👗 Women", use_container_width=True):
-        st.switch_page("pages/Women.py")
+        st.switch_page("pages/women.py")
 
 with col3:
     if st.button("🧒 Kids", use_container_width=True):
-        st.switch_page("pages/Kids.py")
+        st.switch_page("pages/kids.py")
 
 with col4:
     if st.button("👟 Footwear", use_container_width=True):
-        st.switch_page("pages/Footwear.py")
+        st.switch_page("pages/footwear.py")
 
 col5, col6, col7, col8 = st.columns(4)
 
 with col5:
     if st.button("👜 Accessories", use_container_width=True):
-        st.switch_page("pages/Accessories.py")
+        st.switch_page("pages/accessories.py")
 
 with col6:
     if st.button("☀️ Summer", use_container_width=True):
-        st.switch_page("pages/Summer.py")
+        st.switch_page("pages/summer.py")
 
 with col7:
     if st.button("❄️ Winter", use_container_width=True):
-        st.switch_page("pages/Winter.py")
+        st.switch_page("pages/winter.py")
 
 with col8:
     if st.button("🏷️ Sale", use_container_width=True):
-        st.switch_page("pages/Sale.py")
+        st.switch_page("pages/sale.py")
 
 st.write("---")
 
